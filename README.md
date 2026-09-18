@@ -9,7 +9,7 @@ Le projet consiste à contacter des coopératives, convenir avec elles des produ
 ## Ouvrir les outils
 
 - `index.html` : vitrine de démonstration.
-- `partenaires.html` : tableau de suivi des coopératives, utilisable sur téléphone. Huit pistes issues de l’[annuaire de l’Ensemble artisanal d’Azrou](https://azrouartisana.wixsite.com/francais/coopratives-de-la-province) y sont préchargées. Il faut vérifier leur activité actuelle avant tout contact.
+- `partenaires.html` : tableau de suivi des coopératives, utilisable sur téléphone. Onze pistes y sont préchargées : huit issues de l’[annuaire de l’Ensemble artisanal d’Azrou](https://azrouartisana.wixsite.com/francais/coopratives-de-la-province) et trois fiches repérées sur [Anou](https://www.theanou.com/). Il faut vérifier leur activité actuelle, leur identité et les modalités de vente déjà en place avant tout contact.
 
 Ouvrez les fichiers dans un navigateur. Aucun serveur ni dépendance n’est nécessaire. Les notes du tableau sont enregistrées **uniquement dans le navigateur utilisé** : elles ne sont pas partagées entre appareils. Exportez régulièrement le CSV et gardez-le dans un espace privé. N’ajoutez pas de coordonnées privées ou de notes confidentielles au dépôt GitHub public.
 
