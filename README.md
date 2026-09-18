@@ -1,67 +1,25 @@
-# 🇲🇦 Les Trésors de l’Atlas
+# Les Trésors de l’Atlas
 
-Site e-commerce dédié à la vente de produits artisanaux marocains, notamment des tiroirs décoratifs faits main.
+Prototype mobile d’une vitrine consacrée aux objets d’inspiration artisanale marocaine.
 
----
+## Ouvrir le site
 
-## 🧠 Description
+Ouvrez `index.html` dans un navigateur. Aucun serveur, compte ni installation de dépendances n’est nécessaire.
 
-Ce site a pour objectif de promouvoir l’artisanat marocain en proposant des meubles uniques inspirés des traditions du Maroc (bois sculpté, zellige, motifs artisanaux).
+## Fonctions disponibles
 
----
+- Catalogue de trois **exemples** avec recherche et filtres.
+- Sélection d’articles conservée localement dans le navigateur.
+- Récapitulatif à copier pour préparer une demande de renseignements.
+- Interface adaptée au téléphone et utilisable au clavier.
 
-## 🛍️ Produits
+Les articles, visuels, descriptions et noms sont **provisoires**. Aucun prix, stock, commande, paiement ou envoi de données n’est proposé. Le bouton de copie fonctionne dans un contexte sécurisé (HTTPS ou localhost) et selon les permissions du navigateur.
 
-- Tiroirs décoratifs
-- Meubles artisanaux
-- Objets faits main
+## Avant une mise en vente
 
----
+1. Remplacer les exemples par des produits réels avec photos autorisées, dimensions, matières, provenance et disponibilité vérifiées.
+2. Définir prix, devise, zones et frais de livraison, conditions de vente et coordonnées professionnelles.
+3. Choisir et intégrer un parcours de commande et un paiement adaptés, puis tester les opérations et les exigences applicables.
+4. Ajouter les langues utiles après validation du contenu français.
 
-## 🎯 Objectifs
-
-- Valoriser le savoir-faire marocain 🇲🇦  
-- Vendre en ligne à une clientèle internationale 🌍  
-- Offrir des produits authentiques et de qualité  
-
----
-
-## 🌐 Fonctionnalités
-
-- Catalogue de produits  
-- Panier d’achat  
-- Paiement sécurisé  
-- Multi-langues (FR / AR / EN)  
-- Site responsive (mobile et tablette)
-
----
-
-## 🚀 Technologies utilisées
-
-- HTML / CSS / JavaScript  
-- (ou GenSpark AI selon ton choix)
-
----
-
-## 📸 Aperçu
-
-*(Ajoute ici des images de ton site ou produits)*
-
----
-
-## 📞 Contact
-
-Email : tonemail@example.com  
-Instagram : @toncompte  
-
----
-
-## 📌 Auteur
-
-Projet réalisé par [Ton Nom]
-
----
-
-## ⭐ Remarque
-
-Ce projet est en cours de développement.
+Le projet est actuellement une **démonstration**, pas une boutique ouverte aux commandes.
