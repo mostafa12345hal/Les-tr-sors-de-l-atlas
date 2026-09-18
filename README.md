@@ -21,6 +21,10 @@ Catalogue de trois **exemples**, recherche, filtres, sélection locale et récap
 
 Ajout de pistes, recherche, filtre par état, notes locales, retrait et export CSV. Une proposition de premier message est disponible comme brouillon. **Aucun message n’est envoyé automatiquement.**
 
+## Vérification technique
+
+Depuis la racine du dépôt, lancez `node tests/smoke-test.js` pour contrôler la logique de recherche, sélection, ajout de pistes, filtrage et conservation locale. Ce test simule la page ; il ne remplace pas un essai visuel dans un navigateur sur téléphone.
+
 ## Déroulement du premier partenariat
 
 1. Vérifier l’existence, l’activité, les produits et un canal professionnel récent pour chaque coopérative.
