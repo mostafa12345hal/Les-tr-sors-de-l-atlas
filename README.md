@@ -4,28 +4,29 @@ Prototype mobile d’une vitrine destinée à présenter des produits de **coop�
 
 ## Modèle envisagé
 
-Le projet consiste à contacter des coopératives, convenir avec elles des produits à promouvoir et percevoir un **pourcentage sur les ventes réalisées** selon un accord préalable. Aucune coopérative n’est encore présentée comme partenaire dans ce prototype. Le taux de commission et les modalités de vente restent à négocier, sans chiffre supposé.
+Le projet consiste à contacter des coopératives, convenir avec elles des produits à promouvoir et percevoir un **pourcentage sur les ventes réalisées** selon un accord préalable. Aucune coopérative n’est encore présentée comme partenaire dans ce prototype. Le taux de commission et les modalités de vente restent à négocier.
 
-## Ouvrir le site
+## Ouvrir les outils
 
-Ouvrez `index.html` dans un navigateur. Aucun serveur, compte ni installation de dépendances n’est nécessaire.
+- `index.html` : vitrine de démonstration.
+- `partenaires.html` : tableau de suivi des coopératives, utilisable sur téléphone. Huit pistes issues de l’[annuaire de l’Ensemble artisanal d’Azrou](https://azrouartisana.wixsite.com/francais/coopratives-de-la-province) y sont préchargées. Il faut vérifier leur activité actuelle avant tout contact.
 
-## Fonctions disponibles
+Ouvrez les fichiers dans un navigateur. Aucun serveur ni dépendance n’est nécessaire. Les notes du tableau sont enregistrées **uniquement dans le navigateur utilisé** : elles ne sont pas partagées entre appareils. Exportez régulièrement le CSV et gardez-le dans un espace privé. N’ajoutez pas de coordonnées privées ou de notes confidentielles au dépôt GitHub public.
 
-- Catalogue de trois **exemples**, avec recherche et filtres.
-- Sélection d’articles conservée localement dans le navigateur.
-- Récapitulatif à copier pour préparer une demande de renseignements.
-- Interface adaptée au téléphone et utilisable au clavier.
-- Présentation du projet et de la démarche proposée aux coopératives.
+## Fonctions de la vitrine
 
-Les articles, visuels, descriptions et noms sont **provisoires**. Aucun prix, stock, partenaire, commande, paiement ou envoi de données n’est proposé. La copie fonctionne sous HTTPS ou localhost selon les permissions du navigateur.
+Catalogue de trois **exemples**, recherche, filtres, sélection locale et récapitulatif à copier. Les articles, visuels et descriptions sont provisoires. Aucun prix, stock, partenaire, commande ou paiement n’est proposé.
 
-## Priorités pour un premier partenariat
+## Fonctions du suivi
 
-1. Constituer une liste de coopératives à contacter dans le Moyen Atlas, puis vérifier les coordonnées et les catégories de produits.
-2. Présenter une proposition simple : visibilité, traitement des demandes, commission et façon de suivre les ventes attribuées au site.
-3. Fixer par écrit, pour chaque coopérative, les produits et visuels autorisés, prix, commission et moment de son versement, stock, expédition, retours, réclamations et données à transmettre.
-4. Documenter de vrais produits : photos autorisées, dimensions, matières, provenance, délais et disponibilité confirmés.
-5. Tester le parcours commercial complet avant d’ouvrir les commandes ou le paiement.
+Ajout de pistes, recherche, filtre par état, notes locales, retrait et export CSV. Une proposition de premier message est disponible comme brouillon. **Aucun message n’est envoyé automatiquement.**
+
+## Déroulement du premier partenariat
+
+1. Vérifier l’existence, l’activité, les produits et un canal professionnel récent pour chaque coopérative.
+2. Adapter la proposition et convenir d’un échange, puis recueillir les besoins et contraintes de la coopérative.
+3. Définir par écrit les produits et visuels autorisés, le prix, la commission et son versement, le suivi des ventes, le stock, la livraison, les retours et les réclamations.
+4. Préparer des fiches produit avec photos autorisées, dimensions, matières, provenance, délais et disponibilité confirmés.
+5. Tester tout le parcours avant d’ouvrir des commandes ou un paiement.
 
 Le projet est actuellement une **démonstration**, pas une boutique ouverte aux commandes.
