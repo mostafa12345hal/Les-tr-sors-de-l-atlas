@@ -19,7 +19,7 @@ Catalogue de trois **exemples**, recherche, filtres, sélection locale et récap
 
 ## Fonctions du suivi
 
-Ajout de pistes, recherche, filtre par état, notes locales, retrait et export CSV. Une proposition de premier message est disponible comme brouillon. **Aucun message n’est envoyé automatiquement.**
+Ajout de pistes, recherche, filtre par état, notes locales, retrait, export et import CSV. L’import ajoute uniquement les nouvelles pistes, ignore les doublons de nom et ville, et conserve les notes déjà présentes. Exportez sur le premier appareil, puis importez ce fichier sur le second. Gardez le CSV dans un espace privé. Une proposition de premier message est disponible comme brouillon. **Aucun message n’est envoyé automatiquement.**
 
 ## Vérification technique
 
