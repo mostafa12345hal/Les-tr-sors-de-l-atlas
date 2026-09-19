@@ -1,0 +1,2 @@
+commande,date,cooperative,reference_produit,quantite,prix_produit,remise,frais_livraison,base_commission,taux_commission,montant_commission,statut_commande,date_reglement,reference_reglement
+EXEMPLE-000,AAAA-MM-JJ,À remplacer,EXEMPLE-001,1,0,0,0,0,0,0,Test uniquement,,
