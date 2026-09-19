@@ -34,3 +34,16 @@ Depuis la racine du dépôt, lancez `node tests/smoke-test.js` pour contrôler l
 5. Tester tout le parcours avant d’ouvrir des commandes ou un paiement.
 
 Le projet est actuellement une **démonstration**, pas une boutique ouverte aux commandes.
+
+
+## Kit opérationnel
+
+- [Offre de partenariat](docs/01-offre-partenariat.md)
+- [Questionnaire coopérative](docs/02-questionnaire-cooperative.md)
+- [Fiche produit à valider](docs/03-fiche-produit.md)
+- [Brouillon d’accord pilote](docs/04-accord-pilote-brouillon.md)
+- [Plan pilote sur 30 jours](docs/05-plan-pilote-30-jours.md)
+- [Modèle de catalogue produits](data/produits-modele.csv)
+- [Registre des commissions](data/commissions-modele.csv)
+
+Ces modèles ne remplacent pas une vérification juridique, fiscale et comptable adaptée au vendeur, au canal de paiement et aux pays visés.
