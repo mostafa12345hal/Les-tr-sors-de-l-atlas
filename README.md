@@ -2,7 +2,7 @@
 
 ## Présentation du MVP
 
-Les Trésors de l’Atlas est un MVP statique qui présente des produits artisanaux marocains et prépare la mise en relation avec des coopératives, en commençant par le Moyen Atlas. Cette version sert à valider le parcours de découverte et les outils de prospection avant toute ouverture de commandes.
+Les Trésors de l’Atlas est un MVP statique qui présente des produits artisanaux marocains et prépare la mise en relation avec des coopératives, en commençant par le Moyen Atlas. Cette version valide le parcours de découverte et les outils de prospection avant toute ouverture de commandes.
 
 ## Fonctionnalités
 
@@ -14,7 +14,7 @@ Les Trésors de l’Atlas est un MVP statique qui présente des produits artisan
 - import et export CSV ;
 - répertoire public des coopératives validées, volontairement vide au démarrage.
 
-Les produits, visuels et descriptions de la vitrine sont des exemples provisoires. Il n’y a ni prix confirmé, ni stock, ni commande, ni paiement en ligne.
+Les produits, visuels et descriptions sont des exemples provisoires. Il n’y a ni prix confirmé, ni stock, ni commande, ni paiement en ligne.
 
 ## Architecture
 
@@ -36,7 +36,7 @@ Les informations enregistrées par le navigateur ne sont pas synchronisées entr
 
 ## Lancement local
 
-Depuis la racine du dépôt, ouvrir `index.html` dans un navigateur. Pour servir le projet en HTTP et éviter les différences liées à `file://`, utiliser par exemple :
+Depuis la racine du dépôt, ouvrir `index.html` dans un navigateur. Pour servir le projet en HTTP :
 
 ```bash
 python3 -m http.server 8000
