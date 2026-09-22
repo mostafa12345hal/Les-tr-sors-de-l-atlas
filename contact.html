@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#193b35">
+  <title>Contact — Les Trésors de l’Atlas</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#18342f;background:#f8f4eb}*{box-sizing:border-box}body{margin:0}a{color:inherit}header,footer{background:#193b35;color:#fff}nav,main,footer>div{max-width:850px;margin:auto;padding:24px}nav{display:flex;justify-content:space-between;gap:20px}.brand{font:700 1.3rem Georgia,serif;text-decoration:none}.links{display:flex;gap:16px}.links a{text-decoration:none}main{padding-top:64px;padding-bottom:80px}h1,h2{font-family:Georgia,serif}h1{font-size:clamp(2.2rem,6vw,4rem);margin:10px 0}.intro,.help{color:#5b6962;line-height:1.7}.panel{background:#fff;border:1px solid #e8e5dc;border-radius:16px;padding:26px;margin-top:30px;box-shadow:0 10px 30px #173c3010}.choice{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice button{padding:14px;border:1px solid #bfc9c2;border-radius:12px;background:#fff;font:inherit;font-weight:700;cursor:pointer}.choice button[aria-pressed=true]{background:#193b35;color:#fff}.field{margin-top:18px}label{display:block;font-weight:700;margin-bottom:7px}input,textarea{width:100%;border:1px solid #bfc9c2;border-radius:10px;padding:12px;font:inherit}textarea{min-height:150px;resize:vertical}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.button{border:0;border-radius:999px;padding:12px 20px;background:#e3b16f;color:#18342f;font-weight:800;cursor:pointer}.button.secondary{background:#e8ece9}.notice{border-left:4px solid #c08947;background:#fff8e9;padding:13px 17px;margin-top:20px}.status{font-weight:700;min-height:24px}@media(max-width:650px){.choice{grid-template-columns:1fr}.links{font-size:.9rem}}
+  </style>
+</head>
+<body>
+  <header><nav><a class="brand" href="index.html">✦ Les Trésors de l’Atlas</a><div class="links"><a href="index.html">Vitrine</a><a href="cooperatives.html">Coopératives</a></div></nav></header>
+  <main>
+    <div>PRISE DE CONTACT</div>
+    <h1>Préparons votre demande</h1>
+    <p class="intro">Ce formulaire prépare un message à copier. Il n’envoie aucune donnée et ne l’enregistre pas sur un serveur. Une adresse professionnelle sera ajoutée après validation.</p>
+    <section class="panel" aria-labelledby="formTitle">
+      <h2 id="formTitle">Votre demande</h2>
+      <div class="choice" role="group" aria-label="Votre profil">
+        <button type="button" data-profile="cooperative" aria-pressed="true">Je représente une coopérative</button>
+        <button type="button" data-profile="buyer" aria-pressed="false">Je recherche un produit</button>
+      </div>
+      <div class="field"><label for="name">Nom ou organisation</label><input id="name" autocomplete="name" maxlength="100"></div>
+      <div class="field"><label for="city">Ville</label><input id="city" autocomplete="address-level2" maxlength="80"></div>
+      <div class="field"><label for="message">Votre message</label><textarea id="message" maxlength="1200" placeholder="Décrivez votre activité, vos produits ou votre besoin sans transmettre de document confidentiel."></textarea></div>
+      <div class="actions"><button class="button" id="prepare" type="button">Préparer le message</button><button class="button secondary" id="copy" type="button" disabled>Copier</button></div>
+      <p class="status" id="status" role="status"></p>
+      <div class="field"><label for="result">Message préparé</label><textarea id="result" readonly></textarea></div>
+      <p class="notice">Ne transmettez pas de pièce d’identité, donnée bancaire, mot de passe ou document confidentiel par ce formulaire.</p>
+    </section>
+  </main>
+  <footer><div>Prototype statique · aucune donnée envoyée ni stockée</div></footer>
+  <script>
+    let profile = 'cooperative';
+    const buttons = document.querySelectorAll('[data-profile]');
+    buttons.forEach(button => button.addEventListener('click', () => {
+      profile = button.dataset.profile;
+      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    }));
+    document.querySelector('#prepare').addEventListener('click', () => {
+      const name = document.querySelector('#name').value.trim();
+      const city = document.querySelector('#city').value.trim();
+      const details = document.querySelector('#message').value.trim();
+      if (!name || !city || !details) {
+        document.querySelector('#status').textContent = 'Complétez les trois champs avant de préparer le message.';
+        return;
+      }
+      const subject = profile === 'cooperative' ? 'Proposition de référencement d’une coopérative' : 'Demande d’information sur un produit';
+      const result = `${subject}\n\nNom ou organisation : ${name}\nVille : ${city}\n\n${details}\n\nJe souhaite être recontacté(e) au sujet du projet Les Trésors de l’Atlas.`;
+      document.querySelector('#result').value = result;
+      document.querySelector('#copy').disabled = false;
+      document.querySelector('#status').textContent = 'Message prêt. Vérifiez-le avant de le copier.';
+    });
+    document.querySelector('#copy').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(document.querySelector('#result').value); document.querySelector('#status').textContent = 'Message copié.'; }
+      catch { document.querySelector('#result').select(); document.querySelector('#status').textContent = 'Copie automatique indisponible : copiez le texte sélectionné.'; }
+    });
+  </script>
+</body>
+</html>
