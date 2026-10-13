@@ -19,7 +19,7 @@ assert.doesNotMatch(page, /mailto:[^"']+@[^"']+/, 'No unverified email address m
 assert.doesNotMatch(page, /partenaires\.html/, 'The public directory must not link to the private tracker');
 
 const contact = fs.readFileSync('contact.html', 'utf8');
-assert.match(contact, /Il n’envoie aucune donnée/, 'The contact page must state that it sends no data');
+assert.match(contact, /Aucun message n’est envoyé automatiquement/, 'The contact page must state that it sends no data');
 assert.doesNotMatch(contact, /<form[\s>]/i, 'The static contact page must not imply server-side submission');
 
 const workflow = fs.readFileSync('.github/workflows/deploy-pages.yml', 'utf8');

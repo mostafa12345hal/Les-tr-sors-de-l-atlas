@@ -29,7 +29,11 @@ jobs:
           node-version: "20"
 
       - name: Run static cooperative tests
-        run: node tests/cooperatives-test.js
+        run: |
+          node tests/cooperatives-test.js
+          node tests/contact-test.js
+          node tests/smoke-test.js
+          node tests/premium-v3-test.js
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -46,12 +50,13 @@ jobs:
           cp contact.html _site/contact.html
           cp data/cooperatives.js _site/data/cooperatives.js
           touch _site/.nojekyll
-          test "$(find _site -type f | wc -l)" -eq 5
-          test -f _site/index.html
-          test -f _site/cooperatives.html
-          test -f _site/contact.html
-          test -f _site/data/cooperatives.js
-          test -f _site/.nojekyll
+          cp collections.html demarche.html devenir-partenaire.html _site/
+          cp robots.txt sitemap.xml _site/
+          cp -r assets _site/assets
+          test -f _site/collections.html
+          test -f _site/demarche.html
+          test -f _site/devenir-partenaire.html
+          test -f _site/assets/premium-v3.css
           test ! -e _site/partenaires.html
           test ! -e _site/docs
           test ! -e _site/tests
@@ -62,6 +67,7 @@ jobs:
 
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     permissions:

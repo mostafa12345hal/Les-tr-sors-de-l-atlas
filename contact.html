@@ -1,61 +1,56 @@
-<!doctype html>
-<html lang="fr">
+<!doctype html><html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#193b35">
-  <title>Contact — Les Trésors de l’Atlas</title>
-  <style>
-    :root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#18342f;background:#f8f4eb}*{box-sizing:border-box}body{margin:0}a{color:inherit}header,footer{background:#193b35;color:#fff}nav,main,footer>div{max-width:850px;margin:auto;padding:24px}nav{display:flex;justify-content:space-between;gap:20px}.brand{font:700 1.3rem Georgia,serif;text-decoration:none}.links{display:flex;gap:16px}.links a{text-decoration:none}main{padding-top:64px;padding-bottom:80px}h1,h2{font-family:Georgia,serif}h1{font-size:clamp(2.2rem,6vw,4rem);margin:10px 0}.intro,.help{color:#5b6962;line-height:1.7}.panel{background:#fff;border:1px solid #e8e5dc;border-radius:16px;padding:26px;margin-top:30px;box-shadow:0 10px 30px #173c3010}.choice{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice button{padding:14px;border:1px solid #bfc9c2;border-radius:12px;background:#fff;font:inherit;font-weight:700;cursor:pointer}.choice button[aria-pressed=true]{background:#193b35;color:#fff}.field{margin-top:18px}label{display:block;font-weight:700;margin-bottom:7px}input,textarea{width:100%;border:1px solid #bfc9c2;border-radius:10px;padding:12px;font:inherit}textarea{min-height:150px;resize:vertical}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.button{border:0;border-radius:999px;padding:12px 20px;background:#e3b16f;color:#18342f;font-weight:800;cursor:pointer}.button.secondary{background:#e8ece9}.notice{border-left:4px solid #c08947;background:#fff8e9;padding:13px 17px;margin-top:20px}.status{font-weight:700;min-height:24px}@media(max-width:650px){.choice{grid-template-columns:1fr}.links{font-size:.9rem}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#183F32"><title>Contact — Les Trésors de l’Atlas</title>
+<meta name="description" content="Contactez Les Trésors de l’Atlas sur WhatsApp ou par email, comme visiteur, coopérative ou artisan.">
+<link rel="canonical" href="https://mostafa12345hal.github.io/Les-tr-sors-de-l-atlas/contact.html">
+<meta property="og:title" content="Contact — Les Trésors de l’Atlas">
+<meta property="og:description" content="Contactez Les Trésors de l’Atlas sur WhatsApp ou par email, comme visiteur, coopérative ou artisan.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_MA">
+<link rel="icon" href="assets/embleme.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/premium-v3.css">
+<script src="assets/premium-v3.js" defer></script>
 </head>
-<body>
-  <header><nav><a class="brand" href="index.html">✦ Les Trésors de l’Atlas</a><div class="links"><a href="index.html">Vitrine</a><a href="cooperatives.html">Coopératives</a></div></nav></header>
-  <main>
-    <div>PRISE DE CONTACT</div>
-    <h1>Préparons votre demande</h1>
-    <p class="intro">Ce formulaire prépare un message à copier. Il n’envoie aucune donnée et ne l’enregistre pas sur un serveur. Une adresse professionnelle sera ajoutée après validation.</p>
-    <section class="panel" aria-labelledby="formTitle">
-      <h2 id="formTitle">Votre demande</h2>
-      <div class="choice" role="group" aria-label="Votre profil">
-        <button type="button" data-profile="cooperative" aria-pressed="true">Je représente une coopérative</button>
-        <button type="button" data-profile="buyer" aria-pressed="false">Je recherche un produit</button>
-      </div>
-      <div class="field"><label for="name">Nom ou organisation</label><input id="name" autocomplete="name" maxlength="100"></div>
-      <div class="field"><label for="city">Ville</label><input id="city" autocomplete="address-level2" maxlength="80"></div>
-      <div class="field"><label for="message">Votre message</label><textarea id="message" maxlength="1200" placeholder="Décrivez votre activité, vos produits ou votre besoin sans transmettre de document confidentiel."></textarea></div>
-      <div class="actions"><button class="button" id="prepare" type="button">Préparer le message</button><button class="button secondary" id="copy" type="button" disabled>Copier</button></div>
-      <p class="status" id="status" role="status"></p>
-      <div class="field"><label for="result">Message préparé</label><textarea id="result" readonly></textarea></div>
-      <p class="notice">Ne transmettez pas de pièce d’identité, donnée bancaire, mot de passe ou document confidentiel par ce formulaire.</p>
-    </section>
-  </main>
-  <footer><div>Prototype statique · aucune donnée envoyée ni stockée</div></footer>
-  <script>
-    let profile = 'cooperative';
-    const buttons = document.querySelectorAll('[data-profile]');
-    buttons.forEach(button => button.addEventListener('click', () => {
-      profile = button.dataset.profile;
-      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    }));
-    document.querySelector('#prepare').addEventListener('click', () => {
-      const name = document.querySelector('#name').value.trim();
-      const city = document.querySelector('#city').value.trim();
-      const details = document.querySelector('#message').value.trim();
-      if (!name || !city || !details) {
-        document.querySelector('#status').textContent = 'Complétez les trois champs avant de préparer le message.';
-        return;
-      }
-      const subject = profile === 'cooperative' ? 'Proposition de référencement d’une coopérative' : 'Demande d’information sur un produit';
-      const result = `${subject}\n\nNom ou organisation : ${name}\nVille : ${city}\n\n${details}\n\nJe souhaite être recontacté(e) au sujet du projet Les Trésors de l’Atlas.`;
-      document.querySelector('#result').value = result;
-      document.querySelector('#copy').disabled = false;
-      document.querySelector('#status').textContent = 'Message prêt. Vérifiez-le avant de le copier.';
-    });
-    document.querySelector('#copy').addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(document.querySelector('#result').value); document.querySelector('#status').textContent = 'Message copié.'; }
-      catch { document.querySelector('#result').select(); document.querySelector('#status').textContent = 'Copie automatique indisponible : copiez le texte sélectionné.'; }
-    });
-  </script>
-</body>
-</html>
+<body><a class="skip" href="#contenu">Aller au contenu</a>
+<div class="topline">UNE VITRINE EN CONSTRUCTION · UN TERRITOIRE À PARTAGER</div>
+<header>
+<div class="nav wrap"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">⟐</span><span>LES TRÉSORS<span class="brand-sub">DE L’ATLAS</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+<nav id="navigation" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="collections.html">Collections</a><a href="demarche.html">Notre démarche</a><a href="devenir-partenaire.html">Devenir partenaire</a><a href="contact.html" aria-current="page">Contact</a></nav></div>
+</header>
+<main id="contenu">
+<section class="page-intro wrap">
+<p class="eyebrow">CONTACT</p>
+<h1>Tout commence<br>par un <em>échange.</em></h1>
+<p class="lead">Visiteur curieux, coopérative ou artisan : choisissons le bon point de départ.</p>
+</section>
+<section class="wrap contact-grid">
+<article class="contact-card">
+<p class="eyebrow">VOUS DÉCOUVREZ LE PROJET</p>
+<h2>Je suis visiteur.</h2>
+<p>Une question sur la démarche ou sur nos univers ? Les produits visibles restent des exemples non disponibles à la vente.</p><a class="button " href="https://wa.me/212655370467?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20le%20projet%20Les%20Tr%C3%A9sors%20de%20l%E2%80%99Atlas%20et%20ses%20univers%20de%20d%C3%A9monstration.">Échanger sur WhatsApp <span aria-hidden="true">↗</span></a></article>
+<article class="contact-card green">
+<p class="eyebrow">VOUS FAITES VIVRE UN SAVOIR-FAIRE</p>
+<h2>Je représente<br>une coopérative.</h2>
+<p>Présentez-nous votre activité et échangeons sur les possibilités d’un partenariat.</p><a class="button " href="https://wa.me/212655370467?text=Bonjour%2C%20je%20repr%C3%A9sente%20une%20coop%C3%A9rative%20ou%20un%20atelier%20et%20souhaite%20discuter%20d%E2%80%99un%20partenariat%20avec%20Les%20Tr%C3%A9sors%20de%20l%E2%80%99Atlas.">Parler du partenariat <span aria-hidden="true">↗</span></a></article>
+</section>
+<section class="section wrap reading">
+<h2>Nos coordonnées directes.</h2>
+<p>WhatsApp Business : <a href="https://wa.me/212655370467?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20le%20projet%20Les%20Tr%C3%A9sors%20de%20l%E2%80%99Atlas%20et%20ses%20univers%20de%20d%C3%A9monstration.">+212 655 370 467</a></p>
+<p>Email : <a class="email" href="mailto:tresors.atlas.maroc@outlook.com">tresors.atlas.maroc@outlook.com</a></p>
+<p>Le message WhatsApp est prérempli et reste modifiable avant son envoi. Aucun message n’est envoyé automatiquement.</p>
+</section>
+</main>
+<footer>
+<div class="wrap footer-grid">
+<div><a class="brand" href="index.html">Les Trésors de l’Atlas</a>
+<p>Le Moyen Atlas, ses matières,<br>ses gestes et ses richesses.</p>
+<p class="small">Projet en développement.<br>Aucune vente ni paiement en ligne.</p></div>
+<div>
+<p class="eyebrow">Explorer</p><a href="index.html">Accueil</a><a href="collections.html">Collections</a><a href="demarche.html">Notre démarche</a><a href="devenir-partenaire.html">Devenir partenaire</a><a href="contact.html" aria-current="page">Contact</a></div>
+<div>
+<p class="eyebrow">Échangeons</p><a href="https://wa.me/212655370467?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20le%20projet%20Les%20Tr%C3%A9sors%20de%20l%E2%80%99Atlas%20et%20ses%20univers%20de%20d%C3%A9monstration.">WhatsApp Business · +212 655 370 467</a><a href="mailto:tresors.atlas.maroc@outlook.com">tresors.atlas.maroc@outlook.com</a><a href="demarche.html#transparence">Transparence &amp; crédits</a></div></div>
+<div class="wrap footer-bottom">© 2026 Les Trésors de l’Atlas · Illustrations de démonstration · Aucun partenaire annoncé sans accord.</div>
+</footer><a class="whatsapp" href="https://wa.me/212655370467?text=Bonjour%2C%20je%20souhaite%20d%C3%A9couvrir%20le%20projet%20Les%20Tr%C3%A9sors%20de%20l%E2%80%99Atlas%20et%20ses%20univers%20de%20d%C3%A9monstration." aria-label="Contacter Les Trésors de l’Atlas sur WhatsApp"><span aria-hidden="true">◉</span> WhatsApp</a>
+</body></html>
