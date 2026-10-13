@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mostafa12345hal.github.io/Les-tr-sors-de-l-atlas/sitemap.xml
